@@ -23,13 +23,13 @@
 <body>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight mt-2">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Datatables Server Side') }}
         </h2>
     </x-slot>
 
     <div class="container">
-        <div class="card mx-3 my-3 px-3">
+        <div class="card no-border no-gutters shadow my-5">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12 mt-3">

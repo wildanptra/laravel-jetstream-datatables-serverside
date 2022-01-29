@@ -12,9 +12,7 @@ class SiswaController extends Controller
 {
     public function json(Request $request)
     {
-        DB::statement(DB::raw('set @rownum=0'));
         $siswa = Siswa::select([
-        DB::raw('@rownum  := @rownum  + 1 AS rownum'),
         'siswa.id',
         'siswa.nama',
         'siswa.alamat',
@@ -48,9 +46,6 @@ class SiswaController extends Controller
             return $button;
         })->rawColumns(['status_siswa', 'action']);
 
-        if ($keyword = $request->get('search')['value']) {
-            $datatables->filterColumn('rownum', 'whereRaw', '@rownum  + 1 like ?', ["%{$keyword}%"]);
-        }
 
         return $datatables->make(true);
     }
